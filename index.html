@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>REBELFLIX</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+  <div class="background-blur main-bg"></div>
+
+  <div class="container main-container">
+
+    <div class="logo">REBELFLIX</div>
+
+    <nav class="navbar">
+
+      <a href="#">HOME</a>
+
+      <a href="#">MOVIES</a>
+
+      <a href="#">ABOUT</a>
+
+      <a href="https://www.instagram.com/mr__alpha__95?igsh=cTI3eXczOGpwOWFx" target="_blank" class="instagram-icon">
+
+        <i class="fab fa-instagram"></i> </a>
+
+    </nav>
+
+    <div class="movie-strip">
+
+      <div class="movie" onclick="showPage('salaar-page')">
+
+        <div class="movie-inner">
+
+          <img src="https://i.ibb.co/SwhTf43W/Salaar-profile.png" alt="Salaar">
+
+          <div class="movie-overlay">
+
+            <div class="play-icon">☆</div>
+
+          </div>
+
+        </div>
+
+        <p>SALAAR</p>
+
+      </div>
+
+      <div class="movie" onclick="showPage('saaho-page')">
+
+        <div class="movie-inner">
+
+          <img src="https://i.ibb.co/RpCdxnKN/Saaho-profile.png" alt="Saaho">
+
+          <div class="movie-overlay">
+
+            <div class="play-icon">♡</div>
+
+          </div>
+
+        </div>
+
+        <p>SAAHO</p>
+
+      </div>
+
+      <div class="movie" onclick="showPage('bahubali1-page')">
+
+        <div class="movie-inner">
+
+          <img src="https://i.ibb.co/cS9wKXh7/Bahubali1profile.png" alt="Bahubali 1">
+
+          <div class="movie-overlay">
+
+            <div class="play-icon">◇</div>
+
+          </div>
+
+        </div>
+
+        <p>BAHUBALI 1</p>
+
+      </div>
+
+      <div class="movie" onclick="showPage('kalki-page')">
+
+        <div class="movie-inner">
+
+          <img src="https://i.ibb.co/LWvNWLv/Kalkiprofile.png" alt="Kalki">
+
+          <div class="movie-overlay">
+
+            <div class="play-icon">♧</div>
+
+          </div>
+
+        </div>
+
+        <p>KALKI</p>
+
+      </div>
+
+      <div class="movie" onclick="showPage('bahubali2-page')">
+
+        <div class="movie-inner">
+
+          <img src="https://i.ibb.co/DftF0JDm/Bahubali2profile-1.png" alt="Bahubali 2">
+
+          <div class="movie-overlay">
+
+            <div class="play-icon">♤</div>
+
+          </div>
+
+        </div>
+
+        <p>BAHUBALI 2</p>
+
+      </div>
+
+      <div class="movie" onclick="showPage('adipurush-page')">
+
+        <div class="movie-inner">
+
+          <img src="https://i.ibb.co/cKdCypk7/Adipurushprofile.png" alt="Adipurush">
+
+          <div class="movie-overlay">
+
+            <div class="play-icon">¤</div>
+
+          </div>
+
+        </div>
+
+        <p>ADIPURUSH</p>
+
+      </div>
+
+    </div>
+
+    <div class="prabhas-text">
+
+      <h2>PRABHAS</h2>
+
+      <p>
+        RAJ ANTE REBEL E RA REBEL ANTE RAJ E RA
+        REBEL STAR
+
+        PRABHAS ISN'T JUST A STAR—HE'S A STORM WRAPPED IN SILENCE.<br>
+
+        WITH THE STRENGTH OF A WARRIOR AND THE SOUL OF A KING, HE RULES EVERY FRAME.<br>
+
+        FROM BAAHUBALI TO SALAAR, HE DOESN'T ACT—HE COMMANDS.<br>
+
+        A LEGEND, FORGED IN FIRE AND ETCHED IN GLORY
+
+      </p>
+
+    </div>
+
+    <footer class="footer">
+
+      <p>MADE BY SHAIK ARIF</p>
+
+    </footer>
+
+  </div>
+
+  <div id="salaar-page" class="movie-detail-page hidden">
+
+    <div class="background-blur salaar-bg"></div>
+
+    <div class="back-button" onclick="hidePage('salaar-page')">← BACK</div>
+
+    <div class="movie-detail-container">
+
+      <h1 class="salaar-title">SALAAR</h1>
+
+      <h2 class="salaar-subtitle">PART1-ceasefire</h2>
+
+      <button class="play-button" onclick="openTrailer('https://youtube.com/embed/4GPvYMKtrtI?si=f-WkkysyNGY4-dY9')">
+
+        <span class="button-text">Play now</span>
+
+        
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="saaho-page" class="movie-detail-page hidden">
+
+    <div class="background-blur saaho-bg"></div>
+
+    <div class="back-button" onclick="hidePage('saaho-page')">← BACK</div>
+
+    <div class="movie-detail-container">
+
+      <h1 class="saaho-title">SAAHO</h1>
+
+      <h2 class="saaho-subtitle">THE HUNT FOR TRUTH</h2>
+
+      <button class="play-button" onclick="openTrailer('https://youtube.com/embed/HNnt00swZ5Q?si=OgZQTgR3yRnEU74_')">
+
+        <span class="button-text">Play now</span>
+
+        
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="bahubali1-page" class="movie-detail-page hidden">
+
+    <div class="background-blur bahubali1-bg"></div>
+
+    <div class="back-button" onclick="hidePage('bahubali1-page')">← BACK</div>
+
+    <div class="movie-detail-container">
+
+      <h1 class="bahubali1-title">BAHUBALI 1</h1>
+
+      <h2 class="bahubali1-subtitle">THE BEGINNING</h2>
+
+      <button class="play-button" onclick="openTrailer('https://youtube.com/embed/sOEg_YZQsTI?si=q3lCByDAOu-kQH85')">
+
+        <span class="button-text">Play now</span>
+
+        
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="kalki-page" class="movie-detail-page hidden">
+
+    <div class="background-blur kalki-bg"></div>
+
+    <div class="back-button" onclick="hidePage('kalki-page')">← BACK</div>
+
+    <div class="movie-detail-container">
+
+      <h1 class="kalki-title">KALKI</h1>
+
+      <h2 class="kalki-subtitle">2898 AD</h2>
+
+      <button class="play-button" onclick="openTrailer('https://youtube.com/embed/y1-w1kUGuz8?si=v1vUJ-tYBgOlA6I0')">
+
+        <span class="button-text">Play now</span>
+
+        
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="bahubali2-page" class="movie-detail-page hidden">
+
+    <div class="background-blur bahubali2-bg"></div>
+
+    <div class="back-button" onclick="hidePage('bahubali2-page')">← BACK</div>
+
+    <div class="movie-detail-container">
+
+      <h1 class="bahubali2-title">BAHUBALI 2</h1>
+
+      <h2 class="bahubali2-subtitle">THE CONCLUSION</h2>
+
+      <button class="play-button" onclick="openTrailer('https://youtube.com/embed/qD-6d8Wo3do?si=2Jc0NHLs8ISU2qaP')">
+
+        <span class="button-text">Play now</span>
+
+        
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="adipurush-page" class="movie-detail-page hidden">
+
+    <div class="background-blur adipurush-bg"></div>
+
+    <div class="back-button" onclick="hidePage('adipurush-page')">← BACK</div>
+
+    <div class="movie-detail-container">
+
+      <h1 class="adipurush-title">ADIPURUSH</h1>
+
+      <h2 class="adipurush-subtitle">HONOUR THE COURAGE</h2>
+
+      <button class="play-button" onclick="openTrailer('https://youtube.com/embed/e3ew7YUeeQc?si=RTzBVQT69uZe_6rK')">
+
+        <span class="button-text">Play now</span>
+
+        
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="trailer-modal hidden" id="trailerModal">
+
+    <div class="trailer-content">
+
+      <span class="close-button" id="closeTrailer">×</span>
+
+      <iframe class="trailer-iframe" id="trailerIframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+
+  </div>
+
+  <script>
+    // Get the trailer modal elements once
+    const trailerModal = document.getElementById('trailerModal');
+    const trailerIframe = document.getElementById('trailerIframe');
+    const closeTrailerButton = document.getElementById('closeTrailer');
+    // Function to show a movie detail page
+    function showPage(pageId) {
+      document.querySelector('.main-container').classList.add('hidden');
+      document.querySelector('.footer').classList.add('hidden'); // Hide footer
+      document.getElementById(pageId).classList.remove('hidden');
+    }
+    // Function to hide a movie detail page and return to main
+    function hidePage(pageId) {
+      document.getElementById(pageId).classList.add('hidden');
+      document.querySelector('.main-container').classList.remove('hidden');
+      document.querySelector('.footer').classList.remove('hidden'); // Show footer
+    }
+    // Function to open the trailer modal
+    function openTrailer(videoUrl) {
+      trailerIframe.src = videoUrl;
+      trailerModal.classList.remove('hidden');
+    }
+    // Function to close the trailer modal
+    function closeTrailer() {
+      trailerModal.classList.add('hidden');
+      trailerIframe.src = ''; // Clear the iframe source to stop video and prevent "not available"
+    }
+    // Event listener for the modal close button
+    closeTrailerButton.addEventListener('click', closeTrailer);
+    // Close modal when clicking outside
+    trailerModal.addEventListener('click', (e) => {
+      if (e.target === trailerModal) {
+        closeTrailer();
+      }
+    });
+    // Keyboard navigation (Escape key)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (!trailerModal.classList.contains('hidden')) {
+          closeTrailer();
+        } else {
+          // Find currently active movie page and hide it
+          const moviePages = document.querySelectorAll('.movie-detail-page:not(.hidden)');
+          if (moviePages.length > 0) {
+            hidePage(moviePages[0].id); // Hide the first visible movie page
+          }
+        }
+      }
+    });
+    // Add ripple effect to buttons and movie posters
+    document.querySelectorAll('.play-button, .movie').forEach(element => {
+      element.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        this.appendChild(ripple);
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        ripple.addEventListener('animationend', () => {
+          ripple.remove();
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

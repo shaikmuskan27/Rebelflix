@@ -1,0 +1,1037 @@
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+
+  height: 100vh;
+
+  overflow: hidden; /* Ensures no scrollbars unless needed */
+
+  font-family: "Bebas Neue", sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+/* Hidden class for elements that should not be displayed */
+
+.hidden {
+  opacity: 0;
+
+  pointer-events: none; /* Disables interaction */
+
+  visibility: hidden; /* Ensures it's not seen by screen readers */
+
+  /* We'll manage actual display property in JS for smoother transitions */
+
+  position: absolute; /* Take out of flow */
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+}
+
+/* Background styles */
+
+.background-blur {
+  position: fixed;
+
+  inset: 0; /* Shorthand for top, right, bottom, left: 0 */
+
+  background-size: cover;
+
+  background-position: center;
+
+  filter: blur(5px) brightness(0.5);
+
+  z-index: 0;
+
+  transition: all 4s ease;
+}
+
+.main-bg {
+  background-image: url("https://i.ibb.co/mC3NcNYx/Mainbackgroundfinal.jpg");
+}
+
+.salaar-bg {
+  background-image: url("https://i.ibb.co/fdSCZ9Ns/Salaarbackground.jpg");
+}
+
+.saaho-bg {
+  background-image: url("https://i.ibb.co/ZRz26gZh/Saahobackground.jpg");
+}
+
+.bahubali1-bg {
+  background-image: url("https://i.ibb.co/kg2Z37VR/Bahubali1background.jpg");
+}
+
+.kalki-bg {
+  background-image: url("https://i.ibb.co/Y7PYDvf3/Kalkibackground-4.jpg");
+  
+}
+
+.bahubali2-bg {
+  background-image: url("https://i.ibb.co/v6LndJ6b/Bahubali2background.jpg");
+}
+
+.adipurush-bg {
+  background-image: url("https://i.ibb.co/QvV15Qrg/Adipurushbackground.jpg");
+}
+
+/* Main content container (Home Page) */
+
+.container.main-container {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block; /* Ensures it takes full space when active */
+
+  opacity: 1; /* Default to visible */
+
+  transition: opacity 1s ease; /* Keep transition for smooth hiding if needed */
+}
+
+/* Logo */
+
+.logo {
+  position: absolute;
+
+  top: 20px;
+
+  left: 40px;
+
+  font-size: 3rem;
+
+  color: white;
+
+  letter-spacing: 4px;
+
+  text-shadow: 0 0 10px rgba(255,0,0, 217);
+
+  transition: all 0.3s ease;
+}
+
+/* Navbar */
+
+.navbar {
+  position: absolute;
+
+  top: 25px;
+
+  right: 60px;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.navbar a {
+  margin-left: 40px;
+
+  font-size: 1.5rem;
+
+  color: white;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+
+  position: relative;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+
+  transform: translateY(-2px);
+}
+
+.navbar a::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -5px;
+
+  left: 0;
+
+  width: 0;
+
+  height: 2px;
+
+  background: #ffcc00;
+
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Instagram Icon within Navbar */
+
+.navbar .instagram-icon {
+  margin-left: 20px;
+
+  font-size: 1.8rem;
+
+  color: white;
+
+  transition: transform 0.3s ease, color 0.3s ease;
+
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .instagram-icon:hover {
+  transform: scale(1.1);
+
+  color: #e1306c;
+
+  box-shadow: 0 0 15px rgba(225, 48, 108, 0.7);
+}
+
+/* Movie Strip */
+
+.movie-strip {
+  position: absolute;
+
+  top: 110px;
+
+  left: 40px;
+
+  display: flex;
+
+  gap: 30px;
+
+  transition: opacity 5s ease;
+}
+
+.movie {
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: all 5s ease;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.movie-inner {
+  position: relative;
+
+  width: 100px;
+
+  height: 120px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0,1);
+
+  transition: 1s ease;
+
+}
+
+.movie img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: all 4s ease;
+  }
+
+.movie-overlay {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  opacity: 0;
+
+  transition: all 0.3s ease;
+  
+
+  
+
+ 
+ }
+
+.play-icon {
+  color: white;
+
+  font-size: 2rem;
+
+  transform: scale(0.8);
+
+  transition: all 0.3s ease;
+}
+
+.movie:hover .movie-inner {
+  transform: translateY(20px) scale(1);
+
+  box-shadow: 0 5px 35px rgba(255, 0, 0, 0.4);
+}
+
+.movie:hover .movie-overlay {
+  opacity: 1;
+}
+
+.movie:hover .play-icon {
+  transform: scale(1);
+}
+
+.movie p {
+  margin-top: 15px;
+
+  font-size: 1.1rem;
+
+  color: white;
+
+  transition: all 0.3s ease;
+  
+}
+
+.movie:hover p {
+  color: #ffcc00;
+
+  transform: translateY(5px);
+}
+
+/* Prabhas Text */
+
+.prabhas-text {
+  position: absolute;
+
+  bottom: 80px;
+
+  left: 40px;
+
+  max-width: 700px;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  color: white;
+
+  opacity: 1;
+
+  transition: opacity 0.5s ease;
+}
+
+.prabhas-text h2 {
+  font-size: 3rem;
+
+  margin-bottom: 10px;
+
+  color: #FFD000;
+
+  text-shadow: 0 0 15px rgba(255, 0, 0, 123);
+}
+
+.prabhas-text p {
+  font-size: 1.1rem;
+
+  line-height: 1.6;
+}
+
+/* Footer */
+
+.footer {
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  padding: 15px 0;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  color: rgba(255, 255, 255, 0.7);
+
+  text-align: center;
+
+  font-size: 1rem;
+
+  letter-spacing: 4px;
+
+  z-index: 5;
+
+  transition: opacity 0.3s ease;
+}
+
+/* Movie Pages Styles (e.g., Salaar page, Saaho page) */
+
+.movie-detail-page {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  z-index: 2;
+
+  display: flex; /* Use flexbox to center content */
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+  
+  transition: all 1s ease;
+  
+
+  /* Managed by .hidden class */
+}
+
+.back-button {
+  position: absolute;
+
+  top: 25px;
+
+  left: 40px;
+
+  font-size: 1.5rem;
+
+  color: white;
+
+  cursor: pointer;
+
+  z-index: 3;
+
+  transition: all 0.3s ease;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.back-button:hover {
+  color: #ffcc00;
+
+  transform: translateX(-5px);
+}
+
+.movie-detail-container {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  max-width: 900px; /* Constrain width */
+
+  padding: 20px;
+
+  text-align: center;
+
+  transform: scale(1); /* No initial scale */
+
+  opacity: 1; /* No initial opacity fade */
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  
+}
+
+.salaar-title,
+.saaho-title,
+.bahubali1-title,
+.kalki-title,
+.bahubali2-title,
+.adipurush-title {
+  font-size: 8rem;
+
+  color: white;
+
+  letter-spacing: 10px;
+
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  text-shadow: 0 0 10px rgba(255,0,0,0.7);
+
+  animation: pulsered 2s infinite alternate;
+}
+
+.saaho-title {
+  color: #ffffff;
+
+  text-shadow: 0 0 10px 
+
+  animation: pulsered 2s infinite alternate;
+}
+
+.bahubali1-title {
+  color: #ffffff;
+   
+  text-shadow: 0 0 10px 
+
+  animation: pulsered 2s infinite alternate;
+  
+}
+
+.kalki-title {
+  color: #ffffff;
+  text-shadow: 0 0 10px 
+  animation: pulsered 2s infinite alternate;
+}
+
+.bahubali2-title {
+  color: tranparent; 
+
+  text-shadow: 0 0 10px 
+  
+
+  animation: pulsered 2s infinite alternate;
+}
+
+.adipurush-title {
+  color: #ffffff;
+
+  text-shadow: 0 0 10px 
+
+  animation: pulsered 2s infinite alternate;
+}
+
+@keyframes pulsered {
+  from {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+  }
+
+  to {
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.9), 0 0 30px rgba(255, 0, 0, 0.5);
+  }
+}
+
+@keyframes pulseBlue {
+  from {
+    text-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
+  }
+
+  to {
+    text-shadow: 0 0 20px rgba(0, 168, 255, 0.9),
+      0 0 30px rgba(0, 168, 255, 0.5);
+  }
+}
+
+@keyframes pulseGold {
+  from {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+  }
+
+  to {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.9),
+      0 0 30px rgba(212, 175, 55, 0.5);
+  }
+}
+
+@keyframes pulseGreen {
+  from {
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+  }
+
+  to {
+    text-shadow: 0 0 20px rgba(0, 255, 0, 0.9), 0 0 30px rgba(0, 255, 0, 0.5);
+  }
+}
+
+@keyframes pulseOrange {
+  from {
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+  }
+
+  to {
+    text-shadow: 0 0 20px rgba(255, 165, 0, 0.9),
+      0 0 30px rgba(255, 165, 0, 0.5);
+  }
+}
+
+.salaar-subtitle,
+.saaho-subtitle,
+.bahubali1-subtitle,
+.kalki-subtitle,
+.bahubali2-subtitle,
+.adipurush-subtitle {
+  font-size: 3rem;
+
+  color: white;
+
+  letter-spacing: 5px;
+
+  text-align: center;
+
+  margin-bottom: 40px;
+
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.saaho-subtitle {
+  text-shadow: 0 0 5px rgba(0, 168, 255, 0.5);
+}
+
+.bahubali1-subtitle {
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.kalki-subtitle {
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.bahubali2-subtitle {
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.adipurush-subtitle {
+  text-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+/* Play button on movie detail pages */
+
+.play-button {
+
+  border: white;
+  padding: 15px 40px;
+
+  font-size: 1.5rem;
+
+  font-family: "Bebas Neue", sans-serif;
+
+  letter-spacing: 10px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+.saaho-container .play-button {
+  background: tranparent;
+  -webkit-text-stroke: 3px;
+}
+
+.bahubali1-container .play-button,
+.bahubali2-container .play-button {
+  background: linear-gradient(45deg, #a77c00, #d4af37);
+
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.kalki-container .play-button {
+  background: linear-gradient(45deg, #008000, #00ff00);
+
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.adipurush-container .play-button {
+  background: linear-gradient(45deg, #cc8400, #ffa500);
+
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+}
+
+.button-text {
+  position: relative;
+
+  z-index: 2;
+}
+
+.button-icon {
+  position: relative;
+
+  z-index: 2;
+
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+.saaho-container .play-button:hover {
+  box-shadow: 0 0 20px rgba(0, 168, 255, 0.8);
+}
+
+.bahubali1-container .play-button:hover,
+.bahubali2-container .play-button:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+}
+
+.kalki-container .play-button:hover {
+  box-shadow: 0 0 20px rgba(0,255,0,0.8);
+}
+
+.adipurush-container .play-button:hover {
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+}
+
+.play-button:hover .button-icon {
+  transform: scale(1.2);
+}
+
+/* Ripple effect */
+
+.ripple {
+  position: absolute;
+
+  background: rgba(255,255,255,0.4);
+
+  border-radius: 50%;
+
+  transform: scale(0);
+
+  animation: ripple 0.6s linear forwards;
+
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+
+    opacity: 0;
+  }
+}
+
+/* Trailer Modal */
+
+.trailer-modal {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.9);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 100;
+
+  /* opacity and visibility handled by .hidden class */
+}
+
+.trailer-content {
+  width: 80%;
+
+  max-width: 900px;
+
+  position: relative;
+
+  transform: scale(1);
+
+  opacity: 1;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.close-button {
+  position: absolute;
+
+  top: -40px;
+
+  right: 0;
+
+  color: white;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  color: #ff0000;
+
+  transform: scale(1.2);
+}
+
+.trailer-iframe {
+  width: 100%;
+
+  height: 500px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 2rem;
+
+    left: 20px;
+  }
+
+  .navbar {
+    right: 20px;
+
+    top: 20px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+  }
+
+  .navbar a {
+    margin-left: 15px;
+
+    font-size: 1.2rem;
+
+    margin-top: 5px;
+  }
+
+  .navbar .instagram-icon {
+    margin-left: 10px;
+
+    font-size: 1.5rem;
+
+    width: 35px;
+
+    height: 35px;
+  }
+
+  .movie-strip {
+    left: 20px;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    top: 100px;
+  }
+
+  .movie-inner {
+    width: 80px;
+
+    height: 100px;
+  }
+
+  .prabhas-text {
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 60px;
+
+    text-align: center;
+  }
+
+  .salaar-title,
+  .saaho-title,
+  .bahubali1-title,
+  .kalki-title,
+  .bahubali2-title,
+  .adipurush-title {
+    font-size: 5rem;
+  }
+
+  .salaar-subtitle,
+  .saaho-subtitle,
+  .bahubali1-subtitle,
+  .kalki-subtitle,
+  .bahubali2-subtitle,
+  .adipurush-subtitle {
+    font-size: 2rem;
+  }
+
+  .play-button {
+    padding: 10px 30px;
+
+    font-size: 1.2rem;
+  }
+
+  .trailer-iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.8rem;
+
+    left: 10px;
+  }
+
+  .navbar {
+    right: 10px;
+
+    top: 10px;
+  }
+
+  .navbar a {
+    margin-left: 10px;
+
+    font-size: 1rem;
+  }
+
+  .navbar .instagram-icon {
+    margin-left: 8px;
+
+    font-size: 1.3rem;
+
+    width: 30px;
+
+    height: 30px;
+  }
+
+  .movie-strip {
+    left: 10px;
+
+    right: 10px;
+
+    gap: 10px;
+
+    top: 80px;
+  }
+
+  .movie-inner {
+    width: 70px;
+
+    height: 90px;
+  }
+
+  .prabhas-text {
+    left: 10px;
+
+    right: 10px;
+
+    bottom: 50px;
+
+    padding: 15px;
+  }
+
+  .prabhas-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .prabhas-text p {
+    font-size: 0.9rem;
+  }
+
+  .salaar-title,
+  .saaho-title,
+  .bahubali1-title,
+  .kalki-title,
+  .bahubali2-title,
+  .adipurush-title {
+    font-size: 5rem;
+
+    letter-spacing: 10px;
+  }
+
+  .salaar-subtitle,
+  .saaho-subtitle,
+  .bahubali1-subtitle,
+  .kalki-subtitle,
+  .bahubali2-subtitle,
+  .adipurush-subtitle {
+    font-size: 1.2rem;
+
+    letter-spacing: 5px;
+  }
+
+  .play-button {
+    padding: 8px 20px;
+
+    font-size: 1rem;
+  }
+
+  .trailer-iframe {
+    height: 200px;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+
+    padding: 25px 0;
+  }
+}
